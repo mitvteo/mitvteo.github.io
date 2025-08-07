@@ -1,7 +1,9 @@
+const queue = [];
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            queue.push(entry.target);
             observer.unobserve(entry.target);
         }
     });
@@ -25,3 +27,10 @@ function enter(id) {
 function leave(id) {
     document.querySelectorAll(`.${id}`).forEach(el => el.classList.remove('visible'));
 }
+
+setInterval(() => {
+    if (queue.length > 0) {
+        queue[0].classList.add('visible');
+        queue.shift();
+    }
+}, 100);
