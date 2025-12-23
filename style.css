@@ -28,6 +28,16 @@ body {
     }
 }
 
+@keyframes simple-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 #name {
     transform-style: preserve-3d;
     font-size: 7rem;
@@ -48,10 +58,6 @@ body {
     100% {
         transform: translateY(-0.2rem);
     }
-}
-
-.float {
-    animation: float 3s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate;
 }
 
 @keyframes slide-in-up {
@@ -254,4 +260,61 @@ a:hover {
     margin: 1rem 0 1rem 1rem;
     box-shadow: 0 0 8px #08f4;
     background: #08f4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .float {
+        animation: float 3s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #panels {
+        animation: simple-fade-in 2s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+    }
+
+    #t1:checked~#panels .p1,
+    #t2:checked~#panels .p2,
+    #t-yt:checked~#socialpanels .p-yt,
+    #t-tw:checked~#socialpanels .p-tw,
+    #t-rb:checked~#socialpanels .p-rb,
+    #t-gi:checked~#socialpanels .p-gi,
+    #t-em:checked~#socialpanels .p-em,
+    #t-so:checked~#socialpanels .p-so,
+    #t-di:checked~#socialpanels .p-di {
+        animation: simple-fade-in 1s cubic-bezier(0.19, 1, 0.22, 1) both;
+    }
+
+    #t3:checked~#panels .p3 {
+        animation: simple-fade-in 1s cubic-bezier(0.19, 1, 0.22, 1) both;
+    }
+
+    #t1:checked~nav .l1 p,
+    #t2:checked~nav .l2 p,
+    #t3:checked~nav .l3 p,
+    #t-yt:checked~#socialtabs .s-yt p,
+    #t-tw:checked~#socialtabs .s-tw p,
+    #t-rb:checked~#socialtabs .s-rb p,
+    #t-gi:checked~#socialtabs .s-gi p,
+    #t-em:checked~#socialtabs .s-em p,
+    #t-so:checked~#socialtabs .s-so p,
+    #t-di:checked~#socialtabs .s-di p {
+        transform: translateY(0);
+    }
+
+    #name {
+        animation: simple-fade-in 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s forwards;
+    }
+
+    .l1 {
+        animation: simple-fade-in 2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+    }
+
+    .l2 {
+        animation: simple-fade-in 2s cubic-bezier(0.19, 1, 0.22, 1) 0.3s both;
+    }
+
+    .l3 {
+        animation: simple-fade-in 2s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+    }
 }
