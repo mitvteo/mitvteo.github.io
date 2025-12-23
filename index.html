@@ -22,52 +22,95 @@
 
 <body>
     <div id="main">
-        <p id="name" class="name slide-in">
-            mitvteo
-        </p>
-        <div class="caption right slide-in">
-            <h1>skills</h1>
-            <p>Lua, HTML, and JavaScript programmer</p>
-            <p>Beginner python programmer</p>
-            <p>Sometimes makes music</p>
-        </div>
-        <div class="caption left slide-in">
-            <h1>projects</h1>
-            <p>Not much yet...</p>
-        </div>
-        <div class="caption right slide-in">
-            <h1>about me</h1>
-            <p>I really like programming and I make random things for fun</p>
-            <p>I have adhd, autism, and social anxiety</p>
-            <p>"mitvteo" isnt actually my real name, but just a string of 15 randomly selected letters (mitvteowalozbyt)
+        <div id="name">
+            <p class="float">
+                mitvteo
             </p>
         </div>
-        <div class="extrapadding caption center slide-in">
-            <h1>socials</h1>
-            <div class="socials">
-                <a onmouseleave="leave('yt');" onmouseenter="enter('yt');" class="linkyt"
-                    href="https://www.youtube.com/@mitvteo">YouTube</a>
-                <a onmouseleave="leave('twitch');" onmouseenter="enter('twitch');" class="linktwitch"
-                    href="https://www.twitch.tv/mitvteo">Twitch</a>
-                <a onmouseleave="leave('rblx');" onmouseenter="enter('rblx');" class="linkrblx"
-                    href="https://www.roblox.com/users/3961296941/profile">Roblox</a>
-                <a onmouseleave="leave('github');" onmouseenter="enter('github');" class="linkgithub"
-                    href="https://github.com/mitvteo">GitHub</a>
-                <a onmouseleave="leave('email');" onmouseenter="enter('email');" class="linkemail"
-                    href="mailto:mitvteowalozbyt@gmail.com">E-mail</a>
-                <a onmouseleave="leave('soundcloud');" onmouseenter="enter('soundcloud');" class="linksoundcloud"
-                    href="https://soundcloud.com/mitvteo">SoundCloud</a>
-                <a onclick="enter('discord')" onmouseleave="leave('discord');" onmouseenter="enter('discord');"
-                    class="linkdiscord">Discord</a>
-                <div class="username">
-                    <p class="yt">@mitvteo</p>
-                    <p class="twitch">mitvteo</p>
-                    <p class="rblx">@Mitvteo_Walozbyt</p>
-                    <p class="github">mitvteo</p>
-                    <p class="email">mitvteowalozbyt@gmail.com</p>
-                    <p class="discord">@mitvteo</p>
-                    <p class="soundcloud">mitvteo</p>
-                </div>
+        <div id="content">
+            <input type="radio" name="tab" id="t1" checked>
+            <input type="radio" name="tab" id="t2">
+            <input type="radio" name="tab" id="t3">
+
+            <nav id="tabs">
+                <label for="t1" class="l1"><p>about me</p></label>
+                <label for="t2" class="l2"><p>projects</p></label>
+                <label for="t3" class="l3"><p>socials</p></label>
+            </nav>
+
+            <br>
+            
+            <div id="panels">
+                <section class="panel p1">
+                    <p>Lua and JavaScript programmer</p>
+                    <p>Beginner to HTML, CSS, and python</p>
+                    <p>Game developer through Roblox, pygame, and HTML</p>
+                    <p>I also occasionally make music, mainly electronic music using <a href="https://jummb.us/" target="_blank" rel="noopener noreferrer">Jummbox</a></p>
+                    <p>Most of my music is original, however I'm also good at remixes/recreations</p>
+                    <div class="separator"></div>
+                    <p>I get sidetracked easily, please don't rely on me for too many things</p>
+                    <p>"mitvteo" isn't my real name, but part of 15 random letters (mitvteowalozbyt)</p>
+                </section>
+                <section class="panel p2">
+                    <p>Not much yet...</p>
+                </section>
+                <section class="panel p3">
+                    <input type="radio" name="social" id="t-yt" checked>
+                    <input type="radio" name="social" id="t-tw">
+                    <input type="radio" name="social" id="t-rb">
+                    <input type="radio" name="social" id="t-gi">
+                    <input type="radio" name="social" id="t-em">
+                    <input type="radio" name="social" id="t-so">
+                    <input type="radio" name="social" id="t-di">
+
+                    <div id="socialtabs">
+                        <label for="t-yt" class="s-yt"><p>YouTube</p></label>
+                        <label for="t-tw" class="s-tw"><p>Twitch</p></label>
+                        <label for="t-rb" class="s-rb"><p>Roblox</p></label>
+                        <label for="t-gi" class="s-gi"><p>GitHub</p></label>
+                        <label for="t-em" class="s-em"><p>E-Mail</p></label>
+                        <label for="t-so" class="s-so"><p>SoundCloud</p></label>
+                        <label for="t-di" class="s-di"><p>Discord</p></label>
+                    </div>
+
+                    <div id="socialpanels">
+                        <section class="panel p-yt">
+                            <p>YouTube channel: <a href="https://www.youtube.com/@mitvteo/" target="_blank">@mitvteo</a></p>
+                            <div class="separator"></div>
+                            <p>There won't be content posted often onto the channel.</p>
+                        </section>
+                        <section class="panel p-tw">
+                            <p>Twitch channel: <a href="https://www.twitch.tv/mitvteo" target="_blank">mitvteo</a></p>
+                            <div class="separator"></div>
+                            <p>I won't be streaming for the foreseeable future.</p>
+                        </section>
+                        <section class="panel p-rb">
+                            <p>Roblox Account: <a href="https://www.roblox.com/users/3961296941/profile" target="_blank">@Mitvteo_Walozbyt</a></p>
+                            <div class="separator"></div>
+                            <p>I play Roblox often, and I'm working on games there. I might move off the platform soon though.</p>
+                        </section>
+                        <section class="panel p-gi">
+                            <p>GitHub Account: <a href="https://github.com/mitvteo" target="_blank">mitvteo</a></p>
+                            <div class="separator"></div>
+                            <p>Currently working on some games and tools, which will be hosted on GitHub.</p>
+                        </section>
+                        <section class="panel p-em">
+                            <p>E-Mail: <a href="mailto:mitvteowalozbyt@gmail.com" target="_blank">mitvteowalozbyt@gmail.com</a></p>
+                            <div class="separator"></div>
+                            <p>Please contact me for anything you need.</p>
+                        </section>
+                        <section class="panel p-so">
+                            <p>SoundCloud Account: <a href="https://soundcloud.com/mitvteo" target="_blank">mitvteo</a></p>
+                            <div class="separator"></div>
+                            <p>I'll hopefully post music there often.</p>
+                        </section>
+                        <section class="panel p-di">
+                            <p>Discord Account: @mitvteo</p>
+                            <div class="separator"></div>
+                            <p>I'll find a way to link my account soon.</p>
+                        </section>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
