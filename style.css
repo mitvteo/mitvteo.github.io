@@ -60,18 +60,6 @@ body {
     }
 }
 
-@keyframes slide-in-up {
-    0% {
-        transform: translateY(2rem);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
 @keyframes small-slide-in-up {
     0% {
         transform: translateY(0.5rem) scaleY(1.1);
@@ -122,7 +110,7 @@ label {
     background: #024b;
     border-radius: 6px;
     font-size: 1.4rem;
-    transition: background 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: background 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -134,12 +122,41 @@ label {
     width: fit-content;
 }
 
+label:hover {
+    background: #036b;
+}
+
+@keyframes slide-in-up {
+    0% {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(-6rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 #socialtabs label {
     margin: 1rem 0;
+    animation: slide-in-right 0.5s cubic-bezier(0.19, 1, 0.22, 1) calc(var(--i) * 0.05s) both;
 }
 
 label p {
-    transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     padding: 0;
     width: fit-content;
     display: flex;
