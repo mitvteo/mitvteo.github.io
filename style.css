@@ -164,6 +164,113 @@ label p {
     justify-content: center;
 }
 
+#projects {
+    column-width: 18rem;
+    column-gap: 2rem;
+    padding: 1rem;
+}
+
+@keyframes flip-in {
+    from {
+        transform: perspective(500px) scale(1.5) rotateX(-20deg) rotateY(20deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: perspective(500px) scale(1) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+#projects a {
+    width: 100%;
+    break-inside: avoid;
+    margin-bottom: 16px;
+    background-color: #024b;
+    box-shadow: 0 0 0px #0000;
+    border-radius: 6px;
+    padding: 0.5rem;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1);
+    animation: flip-in 1s cubic-bezier(0.19, 1, 0.22, 1) calc(var(--i) * 0.05s) backwards;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.5s cubic-bezier(0.19, 1, 0.22, 1), background 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    user-select: none;
+    -moz-user-select: none;
+}
+
+#projects a:not(:has(p.unreleased)) {
+    cursor: pointer;
+}
+
+#projects a:hover {
+    background-color: #036b;
+    z-index: 10;
+}
+
+#projects a p {
+    font-size: 1rem;
+}
+
+p.tag {
+    display: inline;
+    font-weight: normal;
+    font-size: 1.25rem;
+    padding: 0.1rem 0.5rem;
+    margin: 0.2rem 0 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    background: #8088;
+}
+
+p.tag.tag-web {
+    background: #0488;
+}
+
+p.tag.tag-helper {
+    background: #4088;
+}
+
+p.tag.tag-game {
+    background: #1848;
+}
+
+p.tag.tag-wip {
+    background: #8808;
+}
+
+@keyframes unreleased {
+    from {
+        color: #fff;
+    }
+
+    to {
+        color: #fbb;
+    }
+}
+
+p.unreleased {
+    animation: unreleased 1s ease-in-out alternate infinite;
+    background: #8004;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+p.unreleased::before {
+    content: "WARNING: A link may not exist - ";
+}
+
+#projects h2 {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
 label img {
     max-height: 1.7rem;
     margin-right: 0.2rem;
@@ -257,7 +364,7 @@ p {
     margin: 0;
 }
 
-a {
+a:not(.ignore) {
     background-color: transparent;
     color: #6af;
     text-decoration: none;
@@ -267,7 +374,7 @@ a {
     transition: text-shadow 0.2s ease;
 }
 
-a:hover {
+a:hover:not(.ignore) {
     text-shadow: 0 0 12px #6af;
 }
 
@@ -282,6 +389,11 @@ a:hover {
 @media (prefers-reduced-motion: no-preference) {
     .float {
         animation: float 3s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate;
+    }
+
+    #projects a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px #000f;
     }
 }
 
@@ -333,5 +445,9 @@ a:hover {
 
     .l3 {
         animation: simple-fade-in 2s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+    }
+
+    #projects a {
+        animation: simple-fade-in 1s cubic-bezier(0.19, 1, 0.22, 1) calc(var(--i) * 0.05s) backwards;
     }
 }
